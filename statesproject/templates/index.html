@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<h1 class="text-red-500 mt-7 mb-3 font-bold text-center">USA states</h1>
+<div class="overflow-x-auto">
+    <table class="min-w-full bg-white">
+        <thead>
+            <tr>
+                <th class="px-4 py-2 border">State Name</th>
+                <th class="px-4 py-2 border">Abbreviation</th>
+                <th class="px-4 py-2 border">Region</th>
+                <th class="px-4 py-2 border">Division</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for state in data %}
+            <tr>
+                <td class="px-4 py-2 border text-red-700">{{state.state_name}}</td>
+                <td class="px-4 py-2 border text-gray-700">{{state.state_abbrev}}</td>
+                <td class="px-4 py-2 border text-gray-500">{{state.state_region}}</td>
+                <td class="px-4 py-2 border">{{state.state_division}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+
+INSERT INTO people (id_number, first_name, last_name, city, state_code, shirt_or_hat, quiz_points, team, signup, age, company) VALUES
+ id_number | first_name  | last_name  |       city        | state_code | shirt_or_hat | quiz_points |      team       |   signup   | age |               company
+-----------+-------------+------------+-------------------+------------+--------------+-------------+-----------------+------------+-----+-------------------------------------
+         1 | Janice      | Howell     | Los Angeles       | CA         | hat          |          92 | Cosmic Cobras   | 2021-01-01 |  44 | Homenick Group
+         2 | Wanda       | Alvarez    | Riverside         | CA         | shirt        |          80 | Angry Ants      | 2021-01-01 |  33 | Nicolas Inc
+         3 | Laura       | Olson      | San Mateo         | CA         | shirt        |          84 | Baffled Badgers | 2021-01-01 |  40 | Hoeger-O'Keefe
+         4 | Jack        | Garcia     | Hicksville        | NY         | shirt        |          98 | Cosmic Cobras   | 2021-01-01 |  55 |
+         5 | Ryan        | Rice       | Wilmington        | DE         | shirt        |          84 | Angry Ants      | 2021-01-01 |  57 | Carter-VonRueden
+         6 | Christine   | Wood       | Grand Rapids      | MI         | shirt        |          82 | Baffled Badgers | 2021-01-01 |  20 | Zboncak-Leannon
+         7 | Dennis      | Banks      | New York City     | NY         | hat          |          85 | Cosmic Cobras   | 2021-01-01 |  58 | Ullrich, Schroeder and Rempel
+         8 | Paula       | Montgomery | Mobile            | AL         | shirt        |          87 | Angry Ants      | 2021-01-01 |  60 | Krajcik-Koss
+         9 | Jerry       | Ferguson   | Carol Stream      | IL         | shirt        |          81 | Baffled Badgers | 2021-01-01 |  49 | Marcus, Schuppe and Jacobs
+        10 | Darren      | Black      | Pensacola         | FL         | shirt        |          87 | Cosmic Cobras   | 2021-01-01 |  46 | Cartwright LLC
+        11 | Gerald      | Johnston   | Dallas            | TX         | shirt        |          78 | Angry Ants      | 2021-01-01 |  21 |
+        12 | Bonnie      | Brooks     | Bridgeport        | CT         | hat          |          86 | Baffled Badgers | 2021-01-01 |  51 | Terry-Weber
+        13 | Rose        | Armstrong  | Anchorage         | AK         | shirt        |          93 | Cosmic Cobras   | 2021-01-01 |  48 | Bashirian Inc
+        14 | Patrick     | Johnson    | Boise             | ID         | hat          |          71 | Angry Ants      | 2021-01-01 |  21 | Boehm, Grant and Kuphal
+        15 | Linda       | Mitchell   | Burbank           | CA         | shirt        |          92 | Baffled Badgers | 2021-01-01 |  47 | Steuber LLC
+        16 | Brian       | George     | Lake Worth        | FL         | hat          |          82 | Cosmic Cobras   | 2021-01-01 |  54 | Stehr, Windler and MacGyver
+        17 | Jonathan    | Ryan       | Alexandria        | LA         | hat          |          81 | Angry Ants      | 2021-01-01 |  39 | Davis, Stark and Spencer
+        18 | Paul        | Williamson | Apache Junction   | AZ         | hat          |          77 | Baffled Badgers | 2021-01-01 |  48 | Rohan Ltd.
+        19 | Robin       | Hayes      | Salinas           | CA         | shirt        |          98 | Cosmic Cobras   | 2021-01-01 |  27 | Cole, Cronin and Ruecker
+        20 | James       | Graham     | Ogden             | UT         | shirt        |          82 | Angry Ants      | 2021-01-01 |  32 | Bosco Inc
+        21 | Robert      | Hart       | Everett           | WA         | shirt        |          89 | Baffled Badgers | 2021-01-01 |  35 | Gulgowski Ltd.
+        22 | Joe         | Thompson   | Peoria            | IL         | shirt        |          96 | Cosmic Cobras   | 2021-01-01 |  20 | Yundt Group
+        23 | Michelle    | Montgomery | Salinas           | CA         | hat          |          76 | Angry Ants      | 2021-01-01 |  56 | Treutel-Luettgen
+        24 | Randy       | Oliver     | Dallas            | TX         | hat          |          88 | Baffled Badgers | 2021-01-01 |  59 | Rice Group
+        25 | Earl        | Snyder     | Birmingham        | AL         | hat          |          85 | Cosmic Cobras   | 2021-01-01 |  51 | Mills Ltd.
+        26 | Helen       | Berry      | New Haven         | CT         | shirt        |          78 | Angry Ants      | 2021-01-02 |  38 | Gerhold-Runte
+        27 | Christina   | Evans      | Phoenix           | AZ         | shirt        |          83 | Baffled Badgers | 2021-01-02 |  22 | Hagenes Ltd.
+        28 | Scott       | Thompson   | Des Moines        | IA         | hat          |         100 | Cosmic Cobras   | 2021-01-02 |  42 | Lang, Spinka and Herman
+        29 | Gerald      | Montgomery | Albuquerque       | NM         | shirt        |          85 | Angry Ants      | 2021-01-02 |  39 | Zulauf-Kozey
+        30 | Nicole      | Willis     | Fargo             | ND         | hat          |          83 | Baffled Badgers | 2021-01-02 |  55 | Simonis LLC
+        31 | John        | Howard     | Albany            | NY         | hat          |          85 | Cosmic Cobras   | 2021-01-02 |  59 | Denesik Inc
+        32 | Donna       | Daniels    | Port Charlotte    | FL         | hat          |          81 | Angry Ants      | 2021-01-02 |  43 | Ziemann Ltd.
+        33 | Michelle    | Nelson     | Springfield       | MA         | hat          |          87 | Baffled Badgers | 2021-01-02 |  26 | Schowalter, Bogan and Franecki
+        34 | Gary        | Peters     | Carson City       | NV         | shirt        |          97 | Cosmic Cobras   | 2021-01-02 |  58 |
+        35 | Darren      | Ellis      | El Paso           | TX         | hat          |          84 | Angry Ants      | 2021-01-02 |  53 | Hickle Ltd.
+        36 | Sharon      | Brown      | Portland          | OR         | hat          |          84 | Baffled Badgers | 2021-01-02 |  46 | Sipes, Adams and Steuber
+        37 | Margaret    | Hamilton   | Detroit           | MI         | hat          |          96 | Cosmic Cobras   | 2021-01-02 |  53 | Dickinson, Lakin and Waters
+        38 | Richard     | Fox        | Baton Rouge       | LA         | hat          |          74 | Angry Ants      | 2021-01-02 |  37 | Jaskolski Ltd.
+        39 | Linda       | Foster     | Austin            | TX         | shirt        |          92 | Baffled Badgers | 2021-01-02 |  60 | Collins Ltd.
+        40 | Janet       | Rodriguez  | Stockton          | CA         | hat          |          92 | Cosmic Cobras   | 2021-01-02 |  20 |
+        41 | Jacqueline  | Morales    | Fairfax           | VA         | shirt        |          88 | Angry Ants      | 2021-01-02 |  52 |
+        42 | Barbara     | Ortiz      | Los Angeles       | CA         | shirt        |          87 | Baffled Badgers | 2021-01-02 |  48 | Smitham, Kertzmann and Leffler
+        43 | Tina        | Greene     | Seattle           | WA         | hat          |          90 | Cosmic Cobras   | 2021-01-02 |  32 | Becker, Davis and Moen
+        44 | Roy         | Lopez      | San Francisco     | CA         | hat          |          81 | Angry Ants      | 2021-01-02 |  26 | Schneider Ltd.
+        45 | David       | Ford       | Fort Wayne        | IN         | shirt        |          84 | Baffled Badgers | 2021-01-02 |  32 | Howe, Reinger and Ondricka
+        46 | Robert      | Bradley    | Chicago           | IL         | hat          |          87 | Cosmic Cobras   | 2021-01-02 |  39 | Gottlieb, Ebert and Kuphal
+        47 | Paul        | Schmidt    | Davenport         | IA         | shirt        |          76 | Angry Ants      | 2021-01-02 |  51 | Luettgen, Schroeder and Green
+        48 | Christina   | Watkins    | Montpelier        | VT         | hat          |          82 | Baffled Badgers | 2021-01-02 |  42 | Hauck-Brakus
+        49 | Carlos      | Gray       | Garden Grove      | CA         | hat          |          89 | Cosmic Cobras   | 2021-01-02 |  32 | Johnston-Labadie
+        50 | Raymond     | Reyes      | Paterson          | NJ         | hat          |          78 | Angry Ants      | 2021-01-02 |  41 |

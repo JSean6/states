@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+<h1 class="text-red-500 mt-7 mb-3 font-bold text-center">People</h1>
+<div class="overflow-x-auto">
+    <table>
+        <thead>
+            <tr>
+                <th class="px-4 py-2 border">First Name</th>
+                <th class="px-4 py-2 border">Last Name</th>
+                <th class="px-4 py-2 border">Age</th>
+                <th class="px-4 py-2 border">City</th>
+                <th class="px-4 py-2 border">Company</th> 
+            </tr>
+        </thead>
+        <tbody>
+            {% for people in dataset %}
+            <tr>
+                <td class="px-4 py-2 border text-gray-700">{{ people.first_name }}</td>
+                <td class="px-4 py-2 border text-gray-700">{{ people.last_name }}</td>
+                <td class="px-4 py-2 border text-red-700">{{ people.age }}</td>
+                <td class="px-4 py-2 border text-blue-700">{{ people.city }}</td>
+                <td class="px-4 py-2 border text-indigo-500">{{ people.company }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
